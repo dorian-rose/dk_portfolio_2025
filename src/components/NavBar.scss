@@ -1,0 +1,88 @@
+@use "../styles/_mixins";
+@use "../styles/_variables";
+
+header {
+  height: 7rem;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.nav-logo {
+  max-width: 10rem;
+  height: fit-content;
+}
+
+.nav-list {
+  @include mixins.centre-content;
+  gap: 5rem;
+}
+
+.nav-list a {
+  color: variables.$primary;
+  &.active {
+    font-weight: bold;
+  }
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  header {
+    height: 5rem;
+  }
+
+  .nav-logo {
+    max-width: 7rem;
+  }
+  // toggle button
+  .menu-toggle {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease;
+  }
+
+  .bar {
+    background-color: variables.$primary;
+    height: 0.3rem;
+    border-radius: 0.5rem;
+    width: 2.5rem;
+    margin: 0.2rem 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .active .menu-toggle .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-0.5rem, 0.5rem);
+  }
+
+  .active .menu-toggle .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .active .menu-toggle .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-0.5rem, -0.5rem);
+  }
+
+  // menu links
+  .nav-list {
+    @include mixins.vertical-flex;
+    gap: 2rem;
+    position: absolute;
+    top: 7rem;
+    right: -10rem;
+    align-items: end;
+    transition: right 0.3s ease-in-out;
+  }
+
+  .active .nav-list {
+    right: 2.5rem;
+  }
+}

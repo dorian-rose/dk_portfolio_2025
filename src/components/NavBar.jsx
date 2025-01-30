@@ -5,9 +5,11 @@ import { NavLink } from "react-router-dom";
 export const NavBar = () => {
   const toggleMenuBurger = () => {
     const navBar = document.querySelector("nav");
+    const main = document.querySelector("main");
 
     if (navBar) {
       navBar.classList.toggle("active");
+      main.classList.toggle("blur");
     }
   };
 

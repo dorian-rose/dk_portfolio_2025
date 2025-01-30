@@ -9,8 +9,10 @@ header {
 
 nav {
   height: 100%;
-  width: 100%;
   position: relative;
+  width: 100%;
+
+  box-shadow: 0 0 0.5rem #133955;
 }
 
 .nav-logo {
@@ -76,13 +78,19 @@ nav {
     @include mixins.vertical-flex;
     gap: 2rem;
     position: absolute;
-    top: 7rem;
-    right: -10rem;
+    top: 6.5rem;
+    right: -20rem;
+    height: calc(100vh - 6.5rem);
     align-items: end;
+    justify-content: flex-start;
+    background-color: variables.$white;
+    box-shadow: 0 0 3px 7px rgba(255, 255, 255, 1);
+    padding: 0 2.5rem;
     transition: right 0.3s ease-in-out;
+    z-index: 3;
   }
 
   .active .nav-list {
-    right: 2.5rem;
+    right: 0;
   }
 }

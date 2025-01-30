@@ -1,0 +1,45 @@
+@use "../styles/_mixins";
+@use "../styles/_variables";
+
+footer {
+  @include mixins.vertical-flex;
+  gap: 1rem;
+  background-color: variables.$secondary;
+  color: white;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+footer .standard-button {
+  background-color: variables.$secondary-medium;
+}
+
+.footer_contact-block {
+  @include mixins.vertical-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer_contact-method {
+  @include mixins.centre-content;
+  gap: 1.6rem;
+  color: variables.$primary;
+  & a {
+    font-size: 2rem;
+    color: variables.$secondary-medium;
+  }
+  & svg {
+    width: 2rem;
+    height: 2rem;
+    color: variables.$secondary-medium;
+  }
+}
+
+.footer_contact-block .social-contacts svg {
+  height: 1.6rem;
+  width: 1.6;
+  color: variables.$secondary-medium;
+}
+.footer_contact-block small {
+  font-size: 1.2rem;
+}

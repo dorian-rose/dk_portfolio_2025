@@ -1,7 +1,7 @@
 import "./HomeHero.scss";
-import dorian from "../../../assets/dorian.jpeg";
-import { PinSvg } from "../../../assets/icons/PinSvg";
-import { SocialContacts } from "../../../components/common/SocialContacts";
+import dorian from "../../../../assets/dorian.jpeg";
+import { PinSvg } from "../../../../assets/icons/PinSvg";
+import { SocialContacts } from "../../../../components/common/SocialContacts";
 
 export const HomeHero = () => {
   return (
